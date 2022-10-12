@@ -1,20 +1,14 @@
 import { test, expect } from '@playwright/test';
+import percySnapshot from '@percy/playwright';
 
-test('homepage has Playwright in title and get started link linking to the intro page', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('screenshot homepage', async ({ page }) => {
+  await page.goto('http://localhost:8000/');
+  await page.waitForSelector('role=listitem');
+  await percySnapshot(page, 'homepage');
+});
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-
-  // create a locator
-  const getStarted = page.locator('text=Get Started');
-
-  // Expect an attribute "to be strictly equal" to the value.
-  await expect(getStarted).toHaveAttribute('href', '/docs/intro');
-
-  // Click the get started link.
-  await getStarted.click();
-
-  // Expects the URL to contain intro.
-  await expect(page).toHaveURL(/.*intro/);
+test('first article page', async ({ page }) => {
+  await page.goto('http://localhost:8000/blog/getting-started/');
+  await page.waitForSelector('text=Add Post');
+  await percySnapshot(page, 'article 1');
 });

@@ -14,7 +14,8 @@
     "lint": "eslint '**/*.{ts,tsx}'",
     "semantic-release": "semantic-release",
     "generate": "graphql-codegen --config codegen.yml",
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "percy": "percy exec -- npm run test"
   },
   "dependencies": {
     "dark-theme-github": "github:remorses/dark-github-theme",
@@ -49,6 +50,8 @@
     "@graphql-codegen/typescript": "2.4.2",
     "@graphql-codegen/typescript-operations": "^2.2.2",
     "@graphql-codegen/typescript-react-apollo": "3.2.3",
+    "@percy/cli": "^1.11.0",
+    "@percy/playwright": "^1.0.4",
     "@playwright/test": "^1.27.0",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/github": "^8.0.2",
