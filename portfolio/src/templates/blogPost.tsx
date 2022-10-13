@@ -32,7 +32,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
               <div>
                 <header>
                   <Info>
-                    <PostCategory>{category}</PostCategory>
+                    <Category>{category}</Category>
                     <Time dateTime={date}>{date}</Time>
                   </Info>
                   <Title>{title}</Title>
