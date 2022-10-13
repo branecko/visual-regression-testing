@@ -1,0 +1,15 @@
+{
+  "name": "openslava",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx percy snapshot snapshots.yml"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@percy/cli": "^1.11.0"
+  }
+}
